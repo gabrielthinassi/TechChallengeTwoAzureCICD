@@ -17,8 +17,6 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-##pool:
-##  name: 'Default'
   vmImageName: 'gmtpostechvmage'
 
 stages:
@@ -28,6 +26,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: 'Default'
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
